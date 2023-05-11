@@ -1,0 +1,21 @@
+int ledPin = 9;  
+int fadeValue = 0;  
+int fadeAmount = 5;  
+
+void setup() {
+  pinMode(ledPin, OUTPUT);  
+}
+
+void loop() {
+  // fade in
+  for (fadeValue = 0; fadeValue <= 255; fadeValue += fadeAmount) {
+    analogWrite(ledPin, fadeValue);  
+    delay(30); 
+  }
+  
+  // fade out
+  for (fadeValue = 255; fadeValue >= 0; fadeValue -= fadeAmount) {
+    analogWrite(ledPin, fadeValue);
+    delay(30);  
+  }
+}
